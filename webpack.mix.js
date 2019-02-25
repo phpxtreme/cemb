@@ -11,12 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.babel([
-    'node_modules/jquery/dist/jquery.js',
-    'node_modules/bootstrap/dist/js/bootstrap.js',
-], 'public/js/core.js')
+mix.scripts(['resources/js/auth.js'], 'public/js/auth.js')
+    .babel([
+        'node_modules/jquery/dist/jquery.js',
+        'node_modules/jquery-ui-dist/jquery-ui.js',
+        'node_modules/bootstrap/dist/js/bootstrap.js',
+    ], 'public/js/core.js')
     .sass('resources/sass/core.scss', 'public/css')
     .sass('resources/sass/page/auth.scss', 'public/css')
-    .sass('resources/sass/page/app.scss', 'public/css')
-    .babel(['resources/js/auth.js'], 'public/js/auth.js')
-    .babel(['resources/js/app.js'], 'public/js/app.js');
+    .sass('resources/sass/page/app.scss', 'public/css');
