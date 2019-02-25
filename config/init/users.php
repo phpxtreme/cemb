@@ -1,17 +1,10 @@
 <?php
 return [
     [
-        'email'      => 'admin@example.com',
+        'email'      => 'informatico@alficsa.co.cu',
         'password'   => 'ascent',
-        'first_name' => 'Admin',
-        'last_name'  => 'Admin',
+        'first_name' => 'Leonardo',
+        'last_name'  => 'Yanes Batista',
         'active'     => true
     ],
-    [
-        'email'      => 'user@example.com',
-        'password'   => 'ascent',
-        'first_name' => 'User',
-        'last_name'  => 'User',
-        'active'     => true
-    ]
 ];

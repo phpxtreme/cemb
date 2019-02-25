@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return !Auth::check() ? view('page.auth') : view('page.home');
-});
+})->name('home');
 
 /*
 |--------------------------------------------------------------------------
