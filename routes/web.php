@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return !Auth::check() ? view('page.auth') : view('page.home');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Routes for unauthenticated users
+|--------------------------------------------------------------------------
+*/
+Route::group(['middleware' => 'guest'], function () {
+    Route::post('login', 'Auth\LoginController@login');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Routes for authenticated users
+|--------------------------------------------------------------------------
+*/
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('logout', 'Auth\LoginController@logout');
+});
