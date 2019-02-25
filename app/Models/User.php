@@ -56,16 +56,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * Relation: Many to Many [Users and Roles]
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class);
-    }
-
-    /**
      * Password encryption on create/update the User
      *
      * @param null|string $password

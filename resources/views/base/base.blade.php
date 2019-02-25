@@ -20,12 +20,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contratos</a>
+                        <a class="nav-link {{ Request::is('contratos') ? 'active' : '' }}" href="{{ route('contratos') }}">Contratos</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Facturas</a>
+                        <a class="nav-link {{ Request::is('facturas') ? 'active' : '' }}" href="#">Facturas</a>
                     </li>
                 </ul>
             </div>
@@ -36,6 +36,10 @@
                         {{ Auth::user()->first_name.' '. Auth::user()->last_name }}
                     </a>
                     <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-gear"></i>
+                            Configuración
+                        </a>
                         <a class="dropdown-item logout" href="{{ route('logout') }}">
                             <i class="fa fa-power-off"></i>
                             Salir

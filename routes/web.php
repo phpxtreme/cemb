@@ -35,4 +35,7 @@ Route::group(['middleware' => 'guest'], function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
+
+    Route::get('contratos', 'ContratoController@view')
+        ->name('contratos');
 });
