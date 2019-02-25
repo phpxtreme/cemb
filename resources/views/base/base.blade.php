@@ -8,19 +8,13 @@
     <title>Embarques</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/0.png') }}"/>
     <link rel="stylesheet" href="{{ asset('css/core.css') }}">
-    @auth()
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    @endauth
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('stylesheet')
 </head>
 <body>
-    @yield('header')
     @yield('content')
-    @yield('footer')
     <script type="text/javascript" src="{{ asset('js/core.js') }}"></script>
-    @auth()
-        <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-    @endauth
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     @yield('javascript')
 </body>
 </html>
