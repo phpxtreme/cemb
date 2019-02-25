@@ -41,3 +41,6 @@
         </div>
     </div>
 @endsection
+@section('javascript')
+    <script type="text/javascript" src="{{ asset('js/auth.js') }}"></script>
+@endsection

@@ -14,7 +14,7 @@
     @yield('header')
     @yield('content')
     @yield('footer')
-    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/core.js') }}"></script>
     @yield('javascript')
 </body>
 </html>

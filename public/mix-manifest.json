@@ -2,5 +2,7 @@
     "/css/core.css": "/css/core.css",
     "/css/auth.css": "/css/auth.css",
     "/css/app.css": "/css/app.css",
+    "/js/core.js": "/js/core.js",
+    "/js/auth.js": "/js/auth.js",
     "/js/app.js": "/js/app.js"
 }
