@@ -23,7 +23,8 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 */
 Route::group(['middleware' => 'guest'], function () {
-    Route::post('login', 'Auth\LoginController@login');
+    Route::post('login', 'Auth\LoginController@login')
+        ->name('login');
 });
 
 /*
@@ -32,5 +33,6 @@ Route::group(['middleware' => 'guest'], function () {
 |--------------------------------------------------------------------------
 */
 Route::group(['middleware' => 'auth'], function () {
-    Route::post('logout', 'Auth\LoginController@logout');
+    Route::post('logout', 'Auth\LoginController@logout')
+        ->name('logout');
 });
