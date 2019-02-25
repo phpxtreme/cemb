@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
-    return 1;
+    return !Auth::check() ? view('page.auth') : view('page.home');
 });
