@@ -1,4 +1,7 @@
 @extends('base.base')
+@section('stylesheet')
+    <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+@endsection
 @section('content')
     <div class="container h-100">
         <div class="row d-flex h-100 align-items-center">
