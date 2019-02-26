@@ -4,12 +4,7 @@ return [
     1 => [
         'name'   => 'PROAGUA',
         'active' => true,
-        'grupos' => [
-            [
-                'name'   => 'asdasd',
-                'active' => true
-            ]
-        ]
+        'grupos' => []
     ],
     2 => [
         'name'   => 'TOMSA DESTIL S.A',
@@ -17,7 +12,25 @@ return [
         'grupos' => [
             [
                 'name'   => 'VALVULAS MANUALES DE CORTE',
-                'active' => true
+                'active' => true,
+                'items'  => [
+                    [
+                        'quantity'    => 25,
+                        'unit'        => 'U',
+                        'currency'    => 'USD',
+                        'description' => 'Válvulas de Mariposa',
+                        'model'       => 'DN 50',
+                        'price'       => 1303
+                    ],
+                    [
+                        'quantity'    => 15,
+                        'unit'        => 'U',
+                        'currency'    => 'USD',
+                        'description' => 'Válvulas de Mariposa',
+                        'model'       => 'DN 65',
+                        'price'       => 982
+                    ],
+                ]
             ],
             [
                 'name'   => 'PIPING ACERO INOXIDABLE',
@@ -83,6 +96,6 @@ return [
                 'name'   => 'SUPERVISION TECNICA EN OBRA',
                 'active' => true
             ]
-        ]
+        ],
     ]
 ];

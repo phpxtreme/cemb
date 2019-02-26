@@ -27,12 +27,6 @@
                         </select>
                     </div>
                     <div class="col-2 text-center">
-                        <button class="btn btn-primary" title="Imprimir">
-                            <i class="fa fa-print"></i>
-                        </button>
-                        <button class="btn btn-danger" title="Descargar">
-                            <i class="fa fa-download"></i>
-                        </button>
                     </div>
                 </div>
             </form>
@@ -50,7 +44,7 @@
                         <th scope="col" class="col-1 text-center">Cantidad</th>
                         <th scope="col" class="col-1 text-center">Ud</th>
                         <th scope="col" class="col-1 text-center">Modelo</th>
-                        <th scope="col" class="col-1 text-center">PVP Final</th>
+                        <th scope="col" class="col-1 text-center">Precio</th>
                     </tr>
                     </thead>
                     <tbody>

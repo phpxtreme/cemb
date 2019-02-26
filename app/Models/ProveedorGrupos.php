@@ -31,4 +31,14 @@ class ProveedorGrupos extends Model
     {
         return $this->belongsTo(Proveedor::class);
     }
+
+    /**
+     * Relation: One to Many
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function items()
+    {
+        return $this->hasMany(GrupoItems::class);
+    }
 }
