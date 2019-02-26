@@ -36,9 +36,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
 
+    // Contratos
     Route::get('contratos', 'ContratoController@view')
         ->name('contratos');
 
+    Route::post('contratos/proveedor/grupos', 'ContratoController@getProveedorGrupos');
+
+    // Facturas
     Route::get('facturas', 'FacturaController@view')
         ->name('facturas');
 });

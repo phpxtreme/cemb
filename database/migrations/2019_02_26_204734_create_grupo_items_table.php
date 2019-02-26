@@ -29,10 +29,10 @@ class CreateGrupoItemsTable extends Migration
             $table->integer('cantidad')
                 ->nullable(false);
 
-            $table->integer('unidad')
+            $table->string('unidad')
                 ->nullable(false);
 
-            $table->integer('moneda')
+            $table->string('moneda')
                 ->nullable(false);
 
             $table->text('descripcion')
@@ -41,7 +41,7 @@ class CreateGrupoItemsTable extends Migration
             $table->string('modelo')
                 ->nullable(false);
 
-            $table->integer('precio')
+            $table->string('precio')
                 ->nullable(false);
 
             $table->boolean('active')
