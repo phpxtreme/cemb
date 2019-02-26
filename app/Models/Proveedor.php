@@ -41,4 +41,14 @@ class Proveedor extends Model
         'updated_at',
         'deleted_at'
     ];
+
+    /**
+     * Relation: One to Many
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function grupos()
+    {
+        return $this->hasMany(ProveedorGrupos::class);
+    }
 }

@@ -4,14 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGruposTable extends Migration
+class CreateProveedorGruposTable extends Migration
 {
     /**
-     * Grupos Table
+     * Proveedor Grupos Table
      *
      * @var string
      */
-    private $table = 'grupos';
+    private $table = 'proveedor_grupos';
 
     /**
      * Run the migrations.

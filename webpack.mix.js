@@ -17,6 +17,7 @@ mix.scripts(['resources/js/app.js'], 'public/js/app.js')
         'node_modules/jquery/dist/jquery.js',
         'node_modules/jquery-ui-dist/jquery-ui.js',
         'node_modules/bootstrap/dist/js/bootstrap.js',
+        'node_modules/chosen-js/chosen.jquery.js',
     ], 'public/js/core.js')
     .sass('resources/sass/core.scss', 'public/css')
     .sass('resources/sass/auth.scss', 'public/css')
