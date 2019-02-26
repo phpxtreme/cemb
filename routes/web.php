@@ -38,4 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('contratos', 'ContratoController@view')
         ->name('contratos');
+
+    Route::get('facturas', 'FacturaController@view')
+        ->name('facturas');
 });

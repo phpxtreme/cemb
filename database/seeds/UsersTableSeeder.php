@@ -12,16 +12,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        /** @var array $roles */
-        $roles = config('init.users');
+        /** @var array $users */
+        $users = config('init.users');
 
-        array_map(function ($role) {
+        array_map(function ($user) {
             User::create([
-                'email'      => $role['email'],
-                'password'   => $role['password'],
-                'last_name'  => $role['last_name'],
-                'first_name' => $role['first_name']
+                'email'      => $user['email'],
+                'password'   => $user['password'],
+                'last_name'  => $user['last_name'],
+                'first_name' => $user['first_name']
             ]);
-        }, $roles);
+        }, $users);
     }
 }

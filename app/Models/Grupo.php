@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Proveedor extends Model
+class Grupo extends Model
 {
     /**
-     * Proveedores Table
+     * Grupos Table
      *
      * @var string
      */
-    protected $table = 'proveedores';
+    protected $table = 'grupos';
 
     /**
      * The attributes that aren't mass assignable.

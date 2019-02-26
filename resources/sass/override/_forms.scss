@@ -1,0 +1,14 @@
+.btn {
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+}
+
+.form-control {
+  &:focus {
+    box-shadow: none;
+  }
+
+  border-radius: 0 !important;
+}

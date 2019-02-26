@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('stylesheet')
 </head>
-<body class="container">
+<body class="container pt-3 pb-3">
     <header>
         <nav class="navbar navbar-expand-sm bg-gradient-dark navbar-dark py-2">
             <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center">
                 <img class="logo" src="{{ asset('images/1.png') }}" alt="Inicio">
             </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('contratos') ? 'active' : '' }}" href="{{ route('contratos') }}">Contratos</a>
@@ -25,7 +25,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('facturas') ? 'active' : '' }}" href="#">Facturas</a>
+                        <a class="nav-link {{ Request::is('facturas') ? 'active' : '' }}" href="{{ route('facturas') }}">Facturas</a>
                     </li>
                 </ul>
             </div>
@@ -53,6 +53,21 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb pt-1 pb-1">
+                <li class="breadcrumb-item active">
+                    <small>
+                        <i class="fa fa-angle-double-right"></i> {{ ucfirst(request()->route()->getName()) }}
+                    </small>
+                </li>
+                <li class="ml-auto">
+                    <small>
+                        <i class="fa fa-hourglass-half"></i>
+                        {{ round((microtime(true) - LARAVEL_START), 4) }} ms
+                    </small>
+                </li>
+            </ol>
+        </nav>
         @yield('content')
     </main>
     <footer class="py-2 bg-gradient-dark text-center">
