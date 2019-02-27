@@ -7695,18 +7695,21 @@ input[type="button"].btn-block {
   margin-left: 1.25rem;
 }
 
-.card-header {
+.card-header,
+.default-card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.card-header:first-child {
+.card-header:first-child,
+.default-card-header:first-child {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
 }
 
-.card-header + .list-group .list-group-item:first-child {
+.card-header + .list-group .list-group-item:first-child,
+.default-card-header + .list-group .list-group-item:first-child {
   border-top: 0;
 }
 
@@ -7839,7 +7842,8 @@ input[type="button"].btn-block {
   }
 
   .card-group > .card:first-child .card-img-top,
-  .card-group > .card:first-child .card-header {
+  .card-group > .card:first-child .card-header,
+  .card-group > .card:first-child .default-card-header {
     border-top-right-radius: 0;
   }
 
@@ -7854,7 +7858,8 @@ input[type="button"].btn-block {
   }
 
   .card-group > .card:last-child .card-img-top,
-  .card-group > .card:last-child .card-header {
+  .card-group > .card:last-child .card-header,
+  .card-group > .card:last-child .default-card-header {
     border-top-left-radius: 0;
   }
 
@@ -7868,7 +7873,8 @@ input[type="button"].btn-block {
   }
 
   .card-group > .card:only-child .card-img-top,
-  .card-group > .card:only-child .card-header {
+  .card-group > .card:only-child .card-header,
+  .card-group > .card:only-child .default-card-header {
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
   }
@@ -7886,6 +7892,7 @@ input[type="button"].btn-block {
   .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top,
   .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
   .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-header,
+  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .default-card-header,
   .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-footer {
     border-radius: 0;
   }
@@ -7916,7 +7923,8 @@ input[type="button"].btn-block {
   border-radius: 0;
 }
 
-.accordion .card:not(:first-of-type) .card-header:first-child {
+.accordion .card:not(:first-of-type) .card-header:first-child,
+.accordion .card:not(:first-of-type) .default-card-header:first-child {
   border-radius: 0;
 }
 
@@ -9599,7 +9607,8 @@ button.bg-dark:focus {
   background: #f8f9fa linear-gradient(180deg, #f9fafb, #f8f9fa) repeat-x !important;
 }
 
-.bg-gradient-dark {
+.bg-gradient-dark,
+.default-card-header {
   background: #343a40 -webkit-gradient(linear, left top, left bottom, from(#52585d), to(#343a40)) repeat-x !important;
   background: #343a40 linear-gradient(180deg, #52585d, #343a40) repeat-x !important;
 }
@@ -9716,7 +9725,8 @@ button.bg-dark:focus {
   border-radius: 50% !important;
 }
 
-.rounded-0 {
+.rounded-0,
+.default-card-header {
   border-radius: 0 !important;
 }
 
@@ -11353,6 +11363,7 @@ button.bg-dark:focus {
 }
 
 .pt-1,
+.default-card-header,
 .py-1 {
   padding-top: 0.25rem !important;
 }
@@ -11363,6 +11374,7 @@ button.bg-dark:focus {
 }
 
 .pb-1,
+.default-card-header,
 .py-1 {
   padding-bottom: 0.25rem !important;
 }
@@ -12862,7 +12874,8 @@ button.bg-dark:focus {
   font-style: italic !important;
 }
 
-.text-white {
+.text-white,
+.default-card-header {
   color: #fff !important;
 }
 
@@ -13139,7 +13152,9 @@ a:visited {
 }
 
 .card .card-header + .table,
-.tab-pane .card-header + .table {
+.card .default-card-header + .table,
+.tab-pane .card-header + .table,
+.tab-pane .default-card-header + .table {
   border-top: 0;
 }
 
@@ -13160,5 +13175,9 @@ a:visited {
 
 select.form-control + .chosen-container.chosen-container-single .chosen-single {
   border-radius: 0;
+}
+
+table tbody tr:hover:not(.table-information) {
+  color: #007bff;
 }
 

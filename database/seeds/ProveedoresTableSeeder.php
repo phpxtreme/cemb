@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\GrupoItems;
+use App\Models\ProveedorGrupoItems;
 use App\Models\ProveedorGrupos;
 use App\Repositories\ProveedorRepository;
 use Illuminate\Database\Seeder;
@@ -43,7 +43,7 @@ class ProveedoresTableSeeder extends Seeder
                 // Associate Items to Group
                 if (array_key_exists('items', $grupo)) {
                     foreach ($grupo['items'] as $item) {
-                        GrupoItems::create([
+                        ProveedorGrupoItems::create([
                             'grupo_id'    => $newGroup->id,
                             'cantidad'    => $item['cantidad'],
                             'unidad'      => $item['unidad'],

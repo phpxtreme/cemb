@@ -4,14 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGrupoItemsTable extends Migration
+class CreateProveedorGrupoItemsTable extends Migration
 {
     /**
-     * Grupo Items Table
+     * Proveedor Grupo Items Table
      *
      * @var string
      */
-    private $table = 'grupo_items';
+    private $table = 'proveedor_grupo_items';
 
     /**
      * Run the migrations.
@@ -41,7 +41,7 @@ class CreateGrupoItemsTable extends Migration
             $table->string('modelo')
                 ->nullable(false);
 
-            $table->string('precio')
+            $table->integer('precio')
                 ->nullable(false);
 
             $table->boolean('active')

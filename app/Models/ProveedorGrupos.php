@@ -23,6 +23,16 @@ class ProveedorGrupos extends Model
     ];
 
     /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
+    /**
      * Relation: One to Many (Inverse)
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -39,6 +49,6 @@ class ProveedorGrupos extends Model
      */
     public function items()
     {
-        return $this->hasMany(GrupoItems::class);
+        return $this->hasMany(ProveedorGrupoItems::class);
     }
 }

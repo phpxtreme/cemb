@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GrupoItems extends Model
+class ProveedorGrupoItems extends Model
 {
     /**
      * Grupo Items Table
      *
      * @var string
      */
-    protected $table = 'grupo_items';
+    protected $table = 'proveedor_grupo_items';
 
     /**
      * The attributes that aren't mass assignable.
@@ -21,6 +21,21 @@ class GrupoItems extends Model
     protected $guarded = [
         'id'
     ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
+    public function getPrecioAttribute($precio)
+    {
+        return number_format($precio, 2);
+    }
 
     /**
      * Relation: One to Many (Inverse)
