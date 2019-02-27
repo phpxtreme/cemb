@@ -42,15 +42,15 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <strong>Según Contrato</strong>
-                                    <p>$0.00</p>
+                                    <p id="contrato-detalles-proveedor-precio-segun-contrato">$ 0.00</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <strong>Según Sistema</strong>
-                                    <p>$0.00</p>
+                                    <p id="contrato-detalles-proveedor-precio-segun-sistema">$ 0.00</p>
                                 </div>
                                 <div class="col-sm-12">
                                     <strong>Diferencia</strong>
-                                    <p>$0.00</p>
+                                    <p id="contrato-detalles-proveedor-precio-diferencia">$ 0.00</p>
                                 </div>
                             </div>
                         </div>
@@ -64,15 +64,15 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <strong>Según Contrato</strong>
-                                    <p>$0.00</p>
+                                    <p id="contrato-detalles-grupo-precio-segun-contrato">$ 0.00</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <strong>Según Sistema</strong>
-                                    <p>$0.00</p>
+                                    <p id="contrato-detalles-grupo-precio-segun-sistema">$ 0.00</p>
                                 </div>
                                 <div class="col-sm-12">
                                     <strong>Diferencia</strong>
-                                    <p>$0.00</p>
+                                    <p id="contrato-detalles-grupo-precio-grupo-diferencia">$ 0.00</p>
                                 </div>
                             </div>
                         </div>

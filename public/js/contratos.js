@@ -36,6 +36,7 @@ $(document).ready(function () {
             $('#contrato-detalles-grupo-unidades').html('[ ' + data.unidades.join(' ] [ ') + ' ]')
             $('#contrato-detalles-grupo-monedas').html('[ ' + data.monedas.join(' ] [ ') + ' ]')
 
+            // Cantidades
             $('#contrato-detalles-grupo-menor-cantidad-descripcion').html(data.menorCantidad.descripcion);
             $('#contrato-detalles-grupo-menor-cantidad-modelo').html(data.menorCantidad.modelo);
             $('#contrato-detalles-grupo-menor-cantidad-cantidad').html(data.menorCantidad.cantidad);
@@ -44,6 +45,7 @@ $(document).ready(function () {
             $('#contrato-detalles-grupo-mayor-cantidad-modelo').html(data.mayorCantidad.modelo);
             $('#contrato-detalles-grupo-mayor-cantidad-cantidad').html(data.mayorCantidad.cantidad);
 
+            // Costos
             $('#contrato-detalles-grupo-menor-costo-descripcion').html(data.menorCosto.descripcion);
             $('#contrato-detalles-grupo-menor-costo-modelo').html(data.menorCosto.modelo);
             $('#contrato-detalles-grupo-menor-costo-costo').html(data.menorCosto.precio);
@@ -51,6 +53,16 @@ $(document).ready(function () {
             $('#contrato-detalles-grupo-mayor-costo-descripcion').html(data.mayorCosto.descripcion);
             $('#contrato-detalles-grupo-mayor-costo-modelo').html(data.mayorCosto.modelo);
             $('#contrato-detalles-grupo-mayor-costo-costo').html(data.mayorCosto.precio);
+
+            // Calculo de diferencia en Proveedor
+            $('#contrato-detalles-proveedor-precio-segun-contrato').html(data.precioProveedorSegunContrato);
+            $('#contrato-detalles-proveedor-precio-segun-sistema').html(data.precioProveedorSegunSistema);
+            $('#contrato-detalles-proveedor-precio-diferencia').html(data.precioProveedorDiferencia);
+
+            // Calculo de diferencia en grupo
+            $('#contrato-detalles-grupo-precio-segun-contrato').html(data.precioGrupoSegunContrato);
+            $('#contrato-detalles-grupo-precio-segun-sistema').html(data.precioGrupoSegunSistema);
+            $('#contrato-detalles-grupo-precio-grupo-diferencia').html(data.precioGrupoDiferencia);
 
         });
 

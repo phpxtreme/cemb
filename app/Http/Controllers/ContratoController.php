@@ -90,25 +90,48 @@ class ContratoController extends Controller
             $items = $itemsRepository->select(['grupo_id' => $grupo_id])
                 ->with(['grupo']);
 
-            $data['precioGrupo'] = $grupo->first()->precio;
-            $data['grupo']       = $grupo->first()->name;
-            $data['proveedor']   = $grupo->first()->proveedor->name;
-            $data['total']       = collect($grupo->first()->items)->count();
-            $data['precio']      = collect($grupo->first()->items)->sum('precio');
-            $data['unidades']    = collect($items->get()->pluck('unidad'))->unique()->values();
-            $data['monedas']     = collect($items->get()->pluck('moneda'))->unique()->values();
+            $data['grupo']     = $grupo->first()->name;
+            $data['proveedor'] = $grupo->first()->proveedor->name;
+            $data['total']     = collect($grupo->first()->items)->count();
+            $data['precio']    = collect($grupo->first()->items)->sum('precio');
+            $data['unidades']  = collect($items->get()->pluck('unidad'))->unique()->values();
+            $data['monedas']   = collect($items->get()->pluck('moneda'))->unique()->values();
 
+            // Cantidades
             $data['menorCantidad'] = $itemsRepository->select(['grupo_id' => $grupo_id])
                 ->with(['grupo'])->orderBy('cantidad', 'ASC')->first();
 
             $data['mayorCantidad'] = $itemsRepository->select(['grupo_id' => $grupo_id])
                 ->with(['grupo'])->orderBy('cantidad', 'DESC')->first();
 
+            // Costos
             $data['menorCosto'] = $itemsRepository->select(['grupo_id' => $grupo_id])
                 ->with(['grupo'])->orderBy('precio', 'ASC')->first();
 
             $data['mayorCosto'] = $itemsRepository->select(['grupo_id' => $grupo_id])
                 ->with(['grupo'])->orderBy('precio', 'DESC')->first();
+
+            // Calculo de diferencia en proveedor
+
+            /** @var integer $precioContratoSegunContrato */
+            $precioContratoSegunContrato = $grupo->first()->proveedor->precio;
+
+            /** @var object $allItems */
+            $allItems    = $itemsRepository->select(['active' => true])->with(['grupo'])->get();
+            $sumAllItems = collect($allItems)->sum('precio');
+
+            $data['precioProveedorSegunContrato'] = money_format('%+.2n', $precioContratoSegunContrato);
+            $data['precioProveedorSegunSistema']  = money_format('%+.2n', $sumAllItems);
+            $data['precioProveedorDiferencia']    = money_format('%+.2n', ($sumAllItems - $precioContratoSegunContrato));
+
+            // Calculo de diferencia en grupo
+
+            /** @var integer $precioGrupoSegunContrato */
+            $precioGrupoSegunContrato = $grupo->first()->precio;
+
+            $data['precioGrupoSegunContrato'] = money_format('%+.2n', $precioGrupoSegunContrato);
+            $data['precioGrupoSegunSistema']  = money_format('%+.2n', $data['precio']);
+            $data['precioGrupoDiferencia']    = money_format('%+.2n', ($data['precio'] - $precioGrupoSegunContrato));
         }
 
         return $data;
