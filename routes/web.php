@@ -42,6 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('contratos/proveedor/grupos', 'ContratoController@getProveedorGrupos');
     Route::post('contratos/proveedor/grupo/items', 'ContratoController@getGrupoItems');
+    Route::post('contratos/proveedor/grupo/detalles', 'ContratoController@getGrupoDetalles');
 
     // Facturas
     Route::get('facturas', 'FacturaController@view')

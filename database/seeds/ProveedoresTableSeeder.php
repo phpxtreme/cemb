@@ -36,6 +36,7 @@ class ProveedoresTableSeeder extends Seeder
                 /** @var object $newGroup */
                 $newGroup = ProveedorGrupos::create([
                     'name'         => $grupo['name'],
+                    'precio'       => $grupo['precio'],
                     'active'       => $grupo['active'],
                     'proveedor_id' => $proveedor->id,
                 ]);

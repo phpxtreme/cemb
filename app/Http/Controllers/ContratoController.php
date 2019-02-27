@@ -66,17 +66,51 @@ class ContratoController extends Controller
         ])->get();
     }
 
-    public function getGrupoDetails(Request $request)
+    public function getGrupoDetalles(Request $request)
     {
-        /** @var ProveedorGruposRepository $repository */
-        $repository = new ProveedorGruposRepository();
+        /** @var ProveedorGruposRepository $grupoRepository */
+        $grupoRepository = new ProveedorGruposRepository();
+
+        /** @var ProveedorGrupoItemsRepository $itemsRepository */
+        $itemsRepository = new ProveedorGrupoItemsRepository();
 
         /** @var array $data */
         $data = [];
 
         /** @var integer $grupo */
-        $grupo = $request->only('grupo_id');
+        $grupo_id = $request->only('grupo_id');
 
-        $data['proveedor'] = $repository;
+        if ($grupoRepository->select(['id' => $grupo_id], true)) {
+
+            /** @var object $grupo */
+            $grupo = $grupoRepository->select(['id' => $grupo_id])
+                ->with(['proveedor', 'items'])->get();
+
+            /** @var object $items */
+            $items = $itemsRepository->select(['grupo_id' => $grupo_id])
+                ->with(['grupo']);
+
+            $data['precioGrupo'] = $grupo->first()->precio;
+            $data['grupo']       = $grupo->first()->name;
+            $data['proveedor']   = $grupo->first()->proveedor->name;
+            $data['total']       = collect($grupo->first()->items)->count();
+            $data['precio']      = collect($grupo->first()->items)->sum('precio');
+            $data['unidades']    = collect($items->get()->pluck('unidad'))->unique()->values();
+            $data['monedas']     = collect($items->get()->pluck('moneda'))->unique()->values();
+
+            $data['menorCantidad'] = $itemsRepository->select(['grupo_id' => $grupo_id])
+                ->with(['grupo'])->orderBy('cantidad', 'ASC')->first();
+
+            $data['mayorCantidad'] = $itemsRepository->select(['grupo_id' => $grupo_id])
+                ->with(['grupo'])->orderBy('cantidad', 'DESC')->first();
+
+            $data['menorCosto'] = $itemsRepository->select(['grupo_id' => $grupo_id])
+                ->with(['grupo'])->orderBy('precio', 'ASC')->first();
+
+            $data['mayorCosto'] = $itemsRepository->select(['grupo_id' => $grupo_id])
+                ->with(['grupo'])->orderBy('precio', 'DESC')->first();
+        }
+
+        return $data;
     }
 }

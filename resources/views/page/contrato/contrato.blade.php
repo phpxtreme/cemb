@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <div class="alert alert-success">
+            <div class="alert alert-success rounded-0">
                 <form class="mb-3">
                     <div class="form-row">
                         <div class="col-4">
@@ -36,10 +36,45 @@
                     <div class="card rounded-0">
                         <div class="default-card-header">
                             <i class="fa fa-angle-double-right"></i>
-                            Header
+                            Precio del Contrato
                         </div>
                         <div class="card-body text-center">
-                            <h1 class="card-title total-records">100</h1>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <strong>Según Contrato</strong>
+                                    <p>$0.00</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <strong>Según Sistema</strong>
+                                    <p>$0.00</p>
+                                </div>
+                                <div class="col-sm-12">
+                                    <strong>Diferencia</strong>
+                                    <p>$0.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card rounded-0">
+                        <div class="default-card-header">
+                            <i class="fa fa-angle-double-right"></i>
+                            Precio del Grupo
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <strong>Según Contrato</strong>
+                                    <p>$0.00</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <strong>Según Sistema</strong>
+                                    <p>$0.00</p>
+                                </div>
+                                <div class="col-sm-12">
+                                    <strong>Diferencia</strong>
+                                    <p>$0.00</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,66 +84,87 @@
                             <i class="fa fa-angle-double-right"></i>
                             Detalles del Grupo
                         </div>
-                        <h1 class="card-title text-center pt-3">100</h1>
                         <table class="table table-sm table-striped">
                             <tbody>
                             <tr>
                                 <td>
-                                    Proveedor
+                                    <strong>Proveedor</strong>
                                 </td>
-                                <td>
-                                    1
-                                </td>
+                                <td id="contrato-detalles-grupo-proveedor" class="text-center"></td>
                             </tr>
                             <tr>
                                 <td>
-                                    Grupo
+                                    <strong>Grupo</strong>
                                 </td>
-                                <td>
-                                    2
-                                </td>
+                                <td id="contrato-detalles-grupo-grupo" class="text-center"></td>
                             </tr>
                             <tr>
                                 <td>
-                                    Total de Items
+                                    <strong>Total de Items</strong>
                                 </td>
-                                <td>
-                                    2
-                                </td>
+                                <td id="contrato-detalles-grupo-total" class="text-center"></td>
                             </tr>
                             <tr>
                                 <td>
-                                    Unidades Utilizadas
+                                    <strong>Unidades Utilizadas</strong>
                                 </td>
-                                <td>
-                                    2
-                                </td>
+                                <td id="contrato-detalles-grupo-unidades" class="text-center"></td>
                             </tr>
                             <tr>
                                 <td>
-                                    Monedas Utilizadas
+                                    <strong>Monedas Utilizadas</strong>
                                 </td>
-                                <td>
-                                    2
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Menor Item Solicitado
-                                </td>
-                                <td>
-                                    2
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Mayor Item Solicitado
-                                </td>
-                                <td>
-                                    2
-                                </td>
+                                <td id="contrato-detalles-grupo-monedas" class="text-center"></td>
                             </tr>
                             </tbody>
+                        </table>
+                    </div>
+                    <div class="card rounded-0">
+                        <div class="default-card-header">
+                            <i class="fa fa-angle-double-right"></i>
+                            Costos
+                        </div>
+                        <table class="table table-sm table-striped">
+                            <tr class="d-flex">
+                                <td class="col-3">
+                                    <strong>Menor Costo</strong>
+                                </td>
+                                <td id="contrato-detalles-grupo-menor-costo-descripcion" class="text-center col-5"></td>
+                                <td id="contrato-detalles-grupo-menor-costo-modelo" class="text-center col-2"></td>
+                                <td id="contrato-detalles-grupo-menor-costo-costo" class="text-center col-2"></td>
+                            </tr>
+                            <tr class="d-flex">
+                                <td class="col-3">
+                                    <strong>Mayor Costo</strong>
+                                </td>
+                                <td id="contrato-detalles-grupo-mayor-costo-descripcion" class="text-center col-5"></td>
+                                <td id="contrato-detalles-grupo-mayor-costo-modelo" class="text-center col-2"></td>
+                                <td id="contrato-detalles-grupo-mayor-costo-costo" class="text-center col-2"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card rounded-0">
+                        <div class="default-card-header">
+                            <i class="fa fa-angle-double-right"></i>
+                            Cantidades
+                        </div>
+                        <table class="table table-sm table-striped">
+                            <tr class="d-flex">
+                                <td class="col-3">
+                                    <strong>Menor Cantidad</strong>
+                                </td>
+                                <td id="contrato-detalles-grupo-menor-cantidad-descripcion" class="text-center col-5"></td>
+                                <td id="contrato-detalles-grupo-menor-cantidad-modelo" class="text-center col-2"></td>
+                                <td id="contrato-detalles-grupo-menor-cantidad-cantidad" class="text-center col-2"></td>
+                            </tr>
+                            <tr class="d-flex">
+                                <td class="col-3">
+                                    <strong>Mayor Cantidad</strong>
+                                </td>
+                                <td id="contrato-detalles-grupo-mayor-cantidad-descripcion" class="text-center col-5"></td>
+                                <td id="contrato-detalles-grupo-mayor-cantidad-modelo" class="text-center col-2"></td>
+                                <td id="contrato-detalles-grupo-mayor-cantidad-cantidad" class="text-center col-2"></td>
+                            </tr>
                         </table>
                     </div>
                 </div>
@@ -142,4 +198,7 @@
             </div>
         </div>
     </div>
+@endsection
+@section('javascript')
+    <script type="text/javascript" src="{{ asset('js/contratos.js') }}"></script>
 @endsection

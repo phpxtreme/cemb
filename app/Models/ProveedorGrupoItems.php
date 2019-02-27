@@ -32,11 +32,6 @@ class ProveedorGrupoItems extends Model
         'updated_at',
     ];
 
-    public function getPrecioAttribute($precio)
-    {
-        return number_format($precio, 2);
-    }
-
     /**
      * Relation: One to Many (Inverse)
      *
@@ -44,6 +39,6 @@ class ProveedorGrupoItems extends Model
      */
     public function grupo()
     {
-        return $this->belongsTo(ProveedorGrupos::class);
+        return $this->belongsTo(ProveedorGrupos::class, 'grupo_id', 'id');
     }
 }

@@ -49,6 +49,6 @@ class ProveedorGrupos extends Model
      */
     public function items()
     {
-        return $this->hasMany(ProveedorGrupoItems::class);
+        return $this->hasMany(ProveedorGrupoItems::class, 'grupo_id', 'id');
     }
 }

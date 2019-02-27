@@ -4,15 +4,18 @@ return [
     1 => [
         'name'   => 'PROAGUA',
         'active' => true,
+        'precio' => 0,
         'grupos' => []
     ],
     2 => [
         'name'   => 'TOMSA DESTIL S.A',
         'active' => true,
+        'precio' => 3598000,
         'grupos' => [
             [
                 'name'   => 'VALVULAS MANUALES DE CORTE',
                 'active' => true,
+                'precio' => 48051,
                 'items'  => [
                     [
                         'cantidad'    => 25,
@@ -183,6 +186,14 @@ return [
                         'precio'      => 534
                     ],
                     [
+                        'cantidad'    => 7,
+                        'unidad'      => 'U',
+                        'moneda'      => 'USD',
+                        'descripcion' => 'Válvulas de Mariposa con Volante',
+                        'modelo'      => 'DN 50',
+                        'precio'      => 748
+                    ],
+                    [
                         'cantidad'    => 5,
                         'unidad'      => 'U',
                         'moneda'      => 'USD',
@@ -251,6 +262,7 @@ return [
             [
                 'name'   => 'PIPING ACERO INOXIDABLE',
                 'active' => true,
+                'precio' => 0,
                 'items'  => [
                     [
                         'cantidad'    => 5,
@@ -272,63 +284,78 @@ return [
             ],
             [
                 'name'   => 'PIPING ACERO CARBONO',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'PIPING PVC',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'CIERRES MECANICOS',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'INSTRUMENTACION',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'MOTORES',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'CABLEADO POTENCIA',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'CABLEADO INSTRUMENTACION',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'CUADROS ELECTRICOS',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'BANDEJA ELECTRICA',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'EQUIPOS',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'INSTALACIONES',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'OBRA CIVIL',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'HERRAMIENTAS DE MONTAJE',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'EMBARQUES',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ],
             [
                 'name'   => 'SUPERVISION TECNICA EN OBRA',
-                'active' => true
+                'active' => true,
+                'precio' => 0,
             ]
         ],
     ]

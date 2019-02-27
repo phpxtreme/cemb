@@ -26,9 +26,12 @@ class CreateProveedoresTable extends Migration
             $table->string('name')
                 ->nullable(false);
 
+            $table->integer('precio')
+                ->nullable(false);
+
             $table->boolean('active')
                 ->default(true);
-            
+
             $table->timestamps();
         });
     }

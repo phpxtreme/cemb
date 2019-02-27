@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
 mix.scripts(['resources/js/auth.js'], 'public/js/auth.js')
 mix.scripts(['resources/js/app.js'], 'public/js/app.js')
+mix.scripts(['resources/js/contratos.js'], 'public/js/contratos.js')
     .babel([
         'node_modules/jquery/dist/jquery.js',
         'node_modules/jquery-ui-dist/jquery-ui.js',
