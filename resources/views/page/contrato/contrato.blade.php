@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <div class="alert alert-success rounded-0">
+            <div class="alert alert-secondary rounded-0">
                 <form class="mb-3">
                     <div class="form-row">
                         <div class="col-4">
@@ -175,7 +175,7 @@
                     <i class="fa fa-angle-double-right"></i>
                     Items
                 </div>
-                <table class="table table-sm table-striped table-bordered">
+                <table id="contrato-grupo-table" class="table table-sm table-striped table-bordered display">
                     <thead>
                     <tr class="d-flex">
                         <th scope="col" class="col-1 text-center">#</th>
